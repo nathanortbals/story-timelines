@@ -1,0 +1,44 @@
+:host {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 20px 0 15%;
+  max-width: 600px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.header-text > * {
+  margin: 0;
+}
+
+.logo {
+  font-size: 100px;
+  width: 100px;
+  height: 100px;
+}
+
+.token-form-field {
+  width: 100%;
+}
+
+.submit-button {
+  margin-right: 10px;
+}

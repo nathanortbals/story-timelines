@@ -1,0 +1,44 @@
+<div class="content">
+  <div class="header">
+    <mat-icon aria-hidden="true" fontIcon="timeline" class="logo"></mat-icon>
+    <div class="header-text">
+      <h1 class="mat-headline-3">Story Timelines</h1>
+      <span class="mat-subtitle-2"
+        >Visualized story timelines for PivotalTracker</span
+      >
+    </div>
+  </div>
+  <form [formGroup]="tokenForm" (ngSubmit)="onSubmit()">
+    <mat-form-field
+      appearance="outline"
+      floatLabel="always"
+      class="token-form-field"
+      hideRequiredMarker
+    >
+      <mat-label>Pivotal Api Token</mat-label>
+      <input
+        matInput
+        formControlName="token"
+        type="text"
+        placeholder="Paste pivotal api token here"
+      />
+      <button
+        matSuffix
+        mat-button
+        color="primary"
+        [disabled]="tokenForm.invalid"
+        type="submit"
+        class="submit-button"
+      >
+        Submit
+      </button>
+    </mat-form-field>
+  </form>
+  <p>
+    You api token can be found in your
+    <a href="https://www.pivotaltracker.com/profile">PivotalTracker profile</a>.
+    Your token is used to retrieve information from the PivotalTracker api. It
+    is safely stored here in your browser. Neither your token or any of your
+    PivotalTracker information is sent to any other source.
+  </p>
+</div>

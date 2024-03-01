@@ -1,0 +1,3 @@
+@if (projectService.currentProject$ | async; as project) {
+  <div>{{ project.currentIterationNumber }}</div>
+}

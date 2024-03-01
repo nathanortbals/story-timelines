@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <mat-icon aria-hidden="true" fontIcon="timeline" class="logo"></mat-icon>
+  <span class="title">Story Timelines</span>
+  @if (user$ | async; as user) {
+    <button mat-button color="primary" [matMenuTriggerFor]="projectMenu">
+      @if (currentProject$ | async; as currentProject) {
+        <span>{{ currentProject.name }} </span>
+      }
+      <mat-icon aria-hidden="true" iconPositionEnd>expand_more</mat-icon>
+    </button>
+
+    <mat-menu #projectMenu="matMenu">
+      @for (project of user.projects; track project) {
+        <a
+          mat-menu-item
+          routerLink="/projects/{{ project.projectId }}/iterations/now"
+          >{{ project.projectName }}</a
+        >
+      }
+    </mat-menu>
+
+    <span class="spacer"></span>
+
+    <span class="mat-small name">Signed in as {{ user.name }}</span>
+    <button mat-stroked-button color="warn" (click)="logOut()">Log Out</button>
+  }
+</mat-toolbar>
+<router-outlet></router-outlet>
